@@ -1,9 +1,9 @@
 {
     "ID": "2f4e384e-76ce-45c3-aea2-b16f5e5c328f",
     "ActionKeyword": "hp",
-    "Name": "Hello World Python",
-    "Description": "Python Hello World example plugin",
-    "Author": "Flow Launcher",
+    "Name": "My Plugin Demo",
+    "Description": "a flow-launcher plugin demo",
+    "Author": "xubai",
     "Version": "1.0.0",
     "Language": "python",
     "Website": "https://github.com/Flow-Launcher/Flow.Launcher.Plugin.HelloWorldPython",

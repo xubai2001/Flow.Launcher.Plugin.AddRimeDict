@@ -15,12 +15,12 @@ class HelloWorld(FlowLauncher):
     def query(self, query):
         return [
             {
-                "Title": "Hello World, this is where title goes. {}".format(('Your query is: ' + query , query)[query == '']),
-                "SubTitle": "This is where your subtitle goes, press enter to open Flow's url",
+                "Title": "这是标题 {}".format(('我查询的是 ' + query , query)[query == '']),
+                "SubTitle": "这是副标题, 按enter会打开我的仓库",
                 "IcoPath": "Images/app.png",
                 "JsonRPCAction": {
                     "method": "open_url",
-                    "parameters": ["https://github.com/Flow-Launcher/Flow.Launcher"]
+                    "parameters": ["https://github.com/xubai2001/Flow.Launcher.Plugin.AddRimeDictr"]
                 }
             }
         ]
@@ -28,12 +28,21 @@ class HelloWorld(FlowLauncher):
     def context_menu(self, data):
         return [
             {
-                "Title": "Hello World Python's Context menu",
-                "SubTitle": "Press enter to open Flow the plugin's repo in GitHub",
+                "Title": "上下文菜单1",
+                "SubTitle": "打开flowlauncher仓库",
                 "IcoPath": "Images/app.png",
                 "JsonRPCAction": {
                     "method": "open_url",
                     "parameters": ["https://github.com/Flow-Launcher/Flow.Launcher.Plugin.HelloWorldPython"]
+                }
+            },
+            {
+                "Title": "上下文菜单2",
+                "SubTitle": "打开我的仓库",
+                "IcoPath": "Images/app.png",
+                "JsonRPCAction": {
+                    "method": "open_url",
+                    "parameters": ["https://github.com/xubai2001/Flow.Launcher.Plugin.AddRimeDictr"]
                 }
             }
         ]
