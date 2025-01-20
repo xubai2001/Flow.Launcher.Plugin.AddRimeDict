@@ -8,16 +8,7 @@ sys.path.append(os.path.join(parent_folder_path, "plugin"))
 sys.path.append(os.path.join(parent_folder_path, "venv", "lib", "site-packages")) # add your venv to path
 
 
-from flogin import Plugin, Query, Result
+from plugin.plugin import DeepSeek
 
-plugin = Plugin()
-
-@plugin.search()
-async def on_query(data: Query):
-    yield f"Your text is: {data.text}"
-    yield f"Your keyword is: {data.keyword}"
-    yield Result(f"Your raw text is: {data.raw_text}", sub="keyword + text")
-
-
-if __name__ == "__main__":
-    plugin.run()
+if "__main__" == __name__:
+    DeepSeek().run()
