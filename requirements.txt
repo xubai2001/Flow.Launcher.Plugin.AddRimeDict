@@ -1,3 +1,4 @@
 flowlauncher
 pyperclip
 requests
+flogin
