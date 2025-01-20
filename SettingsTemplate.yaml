@@ -1,33 +1,32 @@
 body:
   - type: passwordBox
-    arrtibutes:
+    attributes:
       name: api_key
-      label: "API Key"
-      defaultValue: ""
-      description: "DeepSeek API Key"
+      label: API Key
+      description: DeepSeek API Key
   - type: dropdown
     attributes:
       name: model
-      label: "Model"
-      defaultValue: "deepseek-chat"
+      label: Model
+      defaultValue: deepseek-chat
       options:
         - deepseek-chat
         - deepseek-coder
   - type: input
     attributes:
       name: prompt_stop
-      label: "Prompt 结束符"
-      defaultValue: "行"
-      description: "输入结束符，用于结束Prompt输入。"
+      label: Prompt 结束符
+      description: 输入结束符，用于结束Prompt输入。
+      defaultValue: 行
   - type: input
     attributes:
       name: default_prompt
-      label: "默认 Prompt"
-      defaultValue: "你是一个博学的ai助手，你能准确简洁的回答我的问题，尽量用一两句话回答"
-      description: "输入默认的Prompt，当用户没有输入内容时，将会使用默认的Prompt。"
+      label: 默认 Prompt
+      description: 输入默认的Prompt，当用户没有输入内容时，将会使用默认的Prompt。
+      defaultValue: 你是一个博学的ai助手，你能准确简洁的回答我的问题，尽量用一两句话回答
   - type: input
     attributes:
       name: api_endpoint
-      label: "API Endpoint"
-      defaultValue: "https://api.deepseek.com/chat/completions"
-      description: "DeepSeek api 的请求地址。"
+      label: API Endpoint
+      description: DeepSeek api 的请求地址。
+      defaultValue: https://api.deepseek.com/chat/completions
