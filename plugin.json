@@ -5,7 +5,7 @@
     "Description": "a flow-launcher plugin demo",
     "Author": "xubai",
     "Version": "1.0.0",
-    "Language": "python",
+    "Language": "python_v2",
     "Website": "https://github.com/Flow-Launcher/Flow.Launcher.Plugin.HelloWorldPython",
     "IcoPath": "Images\\app.png",
     "ExecuteFileName": "main.py"
