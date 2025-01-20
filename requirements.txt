@@ -1,4 +1,5 @@
 flowlauncher
 pyperclip
-requests
+# requests
 flogin
+aiohttp
