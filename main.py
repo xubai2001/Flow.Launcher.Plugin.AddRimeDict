@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys,os
+from flogin import ExecuteResponse, Plugin, Query, Result, SearchHandler
 parent_folder_path = os.path.abspath(os.path.dirname(__file__)) # get the folder that your file is in
 sys.path.append(parent_folder_path) # add the folder to path
 sys.path.append(os.path.join(parent_folder_path, "lib")) # add a 'lib' folder that is in the same dir as your file to path
@@ -8,15 +9,15 @@ sys.path.append(os.path.join(parent_folder_path, "plugin"))
 sys.path.append(os.path.join(parent_folder_path, "venv", "lib", "site-packages")) # add your venv to path
 
 
-# from plugin.plugin import DeepSeek
-
-# if "__main__" == __name__:
-#     DeepSeek().run()
-
-from flogin import ExecuteResponse, Plugin, Query, Result
 
 plugin = Plugin()
 
+class MyHandler(SearchHandler):
+    async def callback(self, query: Query):
+        return "This comes from my subclassed handler"
+    
+    async def on_error(self, query, error):
+        return f"An error occured: {error}"
 
 class MyResult(Result):
     async def callback(self):
@@ -45,10 +46,14 @@ class MyResult(Result):
         return f"An error has occured: {error}"
 
 
+# @plugin.search()
+# async def on_search(data: Query):
+#     return MyResult("This is my result")
 @plugin.search()
-async def on_search(data: Query):
-    return MyResult("This is my result")
+async def my_simple_search_handler(data: Query):
+    return "This comes from my simple handler"
 
 
 if __name__ == "__main__":
+    plugin.register_search_handler(MyHandler())
     plugin.run()
